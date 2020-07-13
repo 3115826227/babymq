@@ -1,0 +1,20 @@
+// proto 文件版本
+syntax = "proto3";
+// 生成文件的包名
+package pbservices;
+
+service VoteService {
+  rpc Request(VoteRequest) returns (VoteResponse);
+}
+
+message VoteRequest {
+  uint32 MessageType = 1;
+  uint32 Term = 2;
+  uint32 Version = 3;
+}
+
+message VoteResponse {
+  uint32 MessageType = 1;
+  uint32 Term = 2;
+  uint32 Version = 3;
+}

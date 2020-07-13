@@ -1,0 +1,9 @@
+register:
+  type: etcd
+  address:
+    - http://127.0.0.1:23791
+  heartbeatTTL: 20
+server:
+  id: 1
+  name: babymq-1
+  port: 5334
