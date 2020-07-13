@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/3115826227/babymq/config"
 	"github.com/3115826227/babymq/internel/communication/service"
 	pbservices "github.com/3115826227/babymq/internel/communication/service/pbservice"
 	"github.com/3115826227/babymq/internel/election/raft"
@@ -24,7 +25,7 @@ var grpcProvider *GrpcServerProvider
 
 func init() {
 	grpcProvider = &GrpcServerProvider{
-		listenerPort: 5337,
+		listenerPort: config.Cfg.Server.Port,
 		tls:          false,
 		grpcServer:   grpc.NewServer(),
 	}

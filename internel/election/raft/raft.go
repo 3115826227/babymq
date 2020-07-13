@@ -56,7 +56,7 @@ var election *ElectionRaftProvider
 func init() {
 	election = &ElectionRaftProvider{
 		stateLock:    sync.Mutex{},
-		state:        Leader,
+		state:        Candidate,
 		leaderLock:   sync.Mutex{},
 		leader:       ServerMeta{},
 		shutdownChan: make(chan bool, 1),
